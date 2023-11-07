@@ -1,0 +1,23 @@
+//<BUTTONS (a.btn+tab)>
+// Снипет (HTML): btn
+
+.btn {
+	padding: rem(15) rem(28);
+	border: rem(1) solid;
+	font-weight: 300;
+	font-size: rem(20);
+	line-height: math.div(22, 20);
+	text-transform: uppercase;
+	border-radius: rem(30);
+
+	span {
+		line-height: 1;
+	}
+
+	// .btn_bg-white
+	&_bg-white {
+		background-color: $White;
+		color: $mainColor;
+		border-color: $White;
+	}
+}
