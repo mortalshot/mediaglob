@@ -1053,7 +1053,8 @@ video {
   	@supports not (padding-bottom: $propertyValue) {
   		padding-bottom: calc(1.25rem + 0.25 * (100vw - 23.4375rem) / 58.4375);
   	} */
-  position: relative;
+  position: sticky;
+  top: 0;
   z-index: 10;
 }
 
@@ -1607,6 +1608,153 @@ video {
   -webkit-transform: translate(0, -20%);
       -ms-transform: translate(0, -20%);
           transform: translate(0, -20%);
+}
+
+:root {
+  --index: calc(1vw + 1vh);
+  --gutter: 30px;
+  --side-small: 26;
+  --side-big: 36;
+  --depth: 4000px;
+  --gallery-transition: 0.75s cubic-bezier(0.075, 0.5, 0, 1);
+}
+
+.template-gallery {
+  padding: 0 !important;
+}
+
+.template-gallery__wrapper {
+  position: fixed;
+  height: calc(100% - var(--header-height));
+  width: 100%;
+  -webkit-perspective: 1500px;
+          perspective: 1500px;
+}
+
+.template-gallery__items {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  height: 100%;
+}
+
+.template-gallery__frame {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity var(--gallery-transition);
+  -o-transition: opacity var(--gallery-transition);
+  transition: opacity var(--gallery-transition);
+  will-change: transform;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+}
+
+.gallery-frame_white {
+  background-color: white;
+}
+
+.gallery-frame_white-opacity {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.gallery-frame_black {
+  background-color: rgba(32, 30, 38, 0.9);
+  color: #a78e8e;
+}
+
+.gallery-frame__text {
+  font-size: clamp( 0.75rem , 0.449197861rem  +  1.2834224599vw , 1.5rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(0.75rem + 0.75 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  line-height: 1.3125;
+  width: 100%;
+  max-width: 67.5rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gallery-frame__text h1,
+.gallery-frame__text h2 {
+  font-size: clamp( 1rem , -0.3536096257rem  +  5.7754010695vw , 4.375rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1rem + 3.375 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  font-size: calc(var(--index) * 1.6);
+}
+
+.gallery-frame__text h4 {
+  font-weight: 300;
+  font-size: clamp( 1rem , 0.5989304813rem  +  1.7112299465vw , 2rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (font-size: $propertyValue) {
+  		font-size: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (font-size: $propertyValue) {
+  		font-size: calc(1rem + 1 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  line-height: 1.3125;
+}
+
+.gallery-frame__text_right > * {
+  position: relative;
+  left: 18vw;
+  max-width: 30vw;
+}
+
+.gallery-frame__text_left > * {
+  position: relative;
+  right: 18vw;
+  max-width: 30vw;
+}
+
+.gallery-frame__media {
+  position: relative;
+  width: calc(var(--index) * var(--side-small));
+  height: calc(var(--index) * var(--side-big));
+  background-position: center;
+  background-size: cover;
+}
+
+.gallery-frame__media_left {
+  right: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.gallery-frame__media_right {
+  left: calc(var(--side-small) / 2 * var(--index) + var(--gutter));
+}
+
+.gallery-frame video.gallery-frame__media {
+  width: calc(var(--index) * var(--side-big));
+  height: calc(var(--index) * var(--side-small));
+}
+
+.gallery-frame video.gallery-frame__media_left {
+  right: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
+}
+
+.gallery-frame video.gallery-frame__media_right {
+  left: calc(var(--side-big) / 2 * var(--index) + var(--gutter));
 }
 
 .template2__container {
@@ -3037,6 +3185,10 @@ button.swiper-pagination-bullet {
     -ms-grid-row-span: 1;
     grid-row: 1/2;
     margin-bottom: 1.25rem;
+  }
+
+  :root {
+    --gutter: 10px;
   }
 
   .template3__image {

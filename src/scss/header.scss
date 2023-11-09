@@ -2,7 +2,8 @@
 .header {
 	@include adaptiveValue("padding-top", 24, 20);
 	@include adaptiveValue("padding-bottom", 24, 20);
-	position: relative;
+	position: sticky;
+	top: 0;
 	z-index: 10;
 
 	// .header__container
