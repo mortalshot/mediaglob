@@ -8,3 +8,54 @@
 		</div>
 	</div>
 </div> -->
+
+<div id="request" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">
+				<img src="@img/icons/close.svg" alt="" loading="lazy">
+			</button>
+			<div class="popup__text">
+				<form action="" class="form">
+					<div class="popup__title">Оставить заявку</div>
+
+					<div class="form__row">
+						<div class="form__item col-12 col-md-6">
+							<label for="request-name" class="form__label">Имя</label>
+							<input id="request-name" type="text" name="form__name" placeholder="Иван" class="form__input" />
+						</div>
+
+						<div class="form__item col-12 col-md-6">
+							<label for="request-phone" class="form__label">Телефон</label>
+							<input id="request-phone" type="text" name="form__name" placeholder="+7-900-123-45-67" class="form__input form__input_phone" />
+						</div>
+
+						<div class="form__item col-12">
+							<label for="request-email" class="form__label">Почта</label>
+							<input id="request-email" type="text" name="form__name" placeholder="user-mail@mail.ru" class="form__input form__input_email" />
+						</div>
+
+						<div class="form__item col-12">
+							<label for="request-text" class="form__label">Описание</label>
+							<textarea id="request-text" name="form[]" placeholder="Текст обращения"  class="form__input"></textarea>
+						</div>
+
+						<div class="form__item col-12">
+							<div class="file__item file-item file-item_upload">
+								<div class="file-item__wrapper">
+									<i class="_icon-upload"></i>
+									<span>Прикрепить файл</span>
+									<input type="file" class="file-item__upload">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="form__submit">
+						<button type="submit" class="btn btn_bg-white">ОТПРАВИТЬ</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

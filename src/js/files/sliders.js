@@ -7,7 +7,7 @@
 // Подключаем слайдер Swiper из node_modules
 // При необходимости подключаем дополнительные модули слайдера, указывая их в {} через запятую
 // Пример: { Navigation, Autoplay }
-import Swiper, { Mousewheel, Navigation, Pagination, Keyboard } from 'swiper';
+import Swiper, { Mousewheel, Navigation, Pagination, Keyboard, Thumbs } from 'swiper';
 /*
 Основниые модули слайдера:
 Navigation, Pagination, Autoplay, 
@@ -123,6 +123,63 @@ function initSliders() {
 
 		homeSlider6md.addEventListener('change', homeSlider6mdChange);
 		homeSlider6mdChange(homeSlider6md);
+	}
+
+	if (document.querySelector('.template4__slider')) { // Указываем скласс нужного слайдера
+		new Swiper('.template4__slider', {
+			modules: [Navigation],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 80,
+			autoHeight: true,
+			speed: 800,
+
+			// Кнопки "влево/вправо"
+			navigation: {
+				prevEl: '.template4 .swiper__button_prev',
+				nextEl: '.template4 .swiper__button_next',
+			},
+			on: {
+
+			}
+		});
+	}
+
+	if (document.querySelector('.reviews-main__slider')) { // Указываем скласс нужного слайдера
+		new Swiper('.reviews-main__slider', {
+			modules: [Thumbs],
+			observer: true,
+			observeParents: true,
+			slidesPerView: 1,
+			spaceBetween: 80,
+			autoHeight: false,
+			speed: 800,
+
+			thumbs: {
+				swiper: {
+					el: '.reviews-thumb__slider',
+					slidesPerView: 3,
+					spaceBetween: 10,
+					
+					breakpoints: {
+						768: {
+							slidesPerView: 4,
+							spaceBetween: 28,
+						},
+						992: {
+							slidesPerView: 5,
+							spaceBetween: 28,
+						},
+					},
+					
+				}
+			},
+
+			on: {
+
+			}
+		});
 	}
 }
 // Скролл на базе слайдера (по классу swiper_scroll для оболочки слайдера)

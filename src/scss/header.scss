@@ -2,9 +2,10 @@
 .header {
 	@include adaptiveValue("padding-top", 24, 20);
 	@include adaptiveValue("padding-bottom", 24, 20);
-	position: sticky;
+	// position: sticky;
 	top: 0;
 	z-index: 10;
+	background-color: $White;
 
 	// .header__container
 	&__container {
@@ -149,13 +150,13 @@
 					display: grid;
 					align-content: flex-start;
 					row-gap: rem(10);
-					background-color: $White;
 
 					&[hidden] {
 						display: none;
 					}
 
 					@media (min-width: $mobile) {
+						background-color: $White;
 						position: absolute;
 						z-index: 5;
 						bottom: 0;
@@ -163,6 +164,10 @@
 						opacity: 0;
 						visibility: hidden;
 						pointer-events: none;
+						padding-left: rem(20);
+						padding-right: rem(20);
+						margin-left: rem(-20);
+						margin-right: rem(-20);
 						transition: $transition ease all 0s;
 					}
 					@media (max-width: $mobile) {
@@ -254,6 +259,8 @@
 
 	&.header_light {
 		color: $Latte;
+		mix-blend-mode: difference;
+		background-color: transparent;
 
 		a {
 			@media (any-hover: hover) {

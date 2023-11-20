@@ -83,16 +83,13 @@ function galleryAnimation() {
 }
 
 window.addEventListener('DOMContentLoaded', function () {
-  const homeTemplate = document.querySelector('.home-template');
+  const firstscreen = document.querySelector('._firstscreen');
   const templateGallery = document.querySelector('.template-gallery');
 
   setTimeout(() => {
-    if (homeTemplate) {
-      showHeaderHeight();
-    }
+    showHeaderHeight();
 
     if (templateGallery) {
-      showHeaderHeight();
       galleryAnimation();
 
       window.scrollTo(0, 1);
@@ -100,9 +97,9 @@ window.addEventListener('DOMContentLoaded', function () {
   }, 300);
 });
 window.addEventListener('resize', function () {
-  const homeTemplate = document.querySelector('.home-template');
+  const firstscreen = document.querySelector('._firstscreen');
 
-  if (homeTemplate) {
+  if (firstscreen) {
     showHeaderHeight();
   }
 });

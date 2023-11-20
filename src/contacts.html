@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Контакты"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{
+    "class":""
+    })
+    <main class="page">
+      <section class="template8">
+        <div class="template8__bg">
+          <img src="@img/template8/template8-bg.jpg" alt="" loading="lazy">
+        </div>
+
+        <div class="template8__container">
+          <div class="template8__wrapper">
+            <div class="template8__body">
+              <h1 class="template8__title">Звоните, пишите или приезжайте к нам</h1>
+  
+              <div class="template8__text">Заполните бриф и получите <br> 3 концепции бесплатно</div>
+              <div class="template8__button">
+                <a href="" class="btn btn_bg-white" data-popup="#request">
+                  <i class="_icon-arrow-right"></i>
+                  <span>ЗАКАЗАТЬ ЗВОНОК</span>
+                </a>
+              </div>
+            </div>
+  
+            <div class="template8__contacts contacts">
+              <div class="contacts__item contacts__item_phone">
+                <a href="tel:88005505909">8 800 550 59 09</a>
+              </div>
+              <div class="contacts__item contacts__item_email">
+                <a href="mailto:info@mediaglob.com">info@mediaglob.com</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    @@include('html/_footer.htm',{
+    "class":"d-none"
+    })
+  </div>
+  @@include('html/_popup.htm',{})
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

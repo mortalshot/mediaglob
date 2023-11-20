@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Портфолио</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20231120184433">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header ">
+			<div class="header__container">
+				<div class="header__left">
+					<div class="header__logo logo">
+						<a href="home.html" class="logo__link _icon-logo"></a>
+					</div>
+
+					<div class="header__menu menu">
+						<button type="button" class="menu__icon icon-menu"><span></span></button>
+						<nav class="menu__body">
+							<ul class="menu__list">
+								<li><a href="about.html">О нас</a></li>
+								<li><a href="archive-portfolio.html">Портфолио</a></li>
+								<li class="menu-item menu-item-has-children">
+									<a href="">Услуги</a>
+									<button type="button" class="menu__arrow _icon-menu-chevron" tabindex="-1"></button>
+
+									<ul class="sub-menu">
+										<li><a href="single-service.html">Анимационные</a></li>
+										<li><a href="single-service.html">Презентационные</a></li>
+										<li><a href="single-service.html">Рекламные</a></li>
+										<li><a href="single-service.html">Продуктовые</a></li>
+										<li><a href="single-service.html">Обучающие</a></li>
+										<li><a href="single-service.html">Фото</a></li>
+									</ul>
+								</li>
+								<li><a href="contacts.html">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
+				<div class="header__right">
+					<div class="header__contacts header-contacts" data-da=".menu__body, 767.98, 1">
+						<div class="header-contacts__item header-contacts__item_phone">
+							<a href="">8 800 550 59 09</a>
+						</div>
+						<div class="header-contacts__item header-contacts__item_email">
+							<a href=""><i class="_icon-email"></i></a>
+						</div>
+					</div>
+
+					<div class="header__button" data-da=".menu__body, 767.98, 2">
+						<a href="" class="" data-popup="#request">Перезвонить</a>
+					</div>
+				</div>
+			</div>
+		</header>
+		<main class="page">
+			<section class="portfolio">
+				<div class="portfolio__container">
+					<div class="portfolio__heading _heading">
+						<h1>Портфолио</h1>
+					</div>
+
+					<div class="portfolio__wrapper">
+						<div class="portfolio__filters portfolio-filters">
+							<div class="portfolio-filters__main">
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon1.svg" alt="">
+										<span>Все</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button class="portfolio-filters__button _active">
+										<img src="img/icons/portfolio-filters-icon2.svg" alt="">
+										<span>Анимационные</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon3.svg" alt="">
+										<span>Презентационные</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon4.svg" alt="">
+										<span>Рекламные</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon5.svg" alt="">
+										<span>Продуктовые</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon6.svg" alt="">
+										<span>Обучающие</span>
+									</button>
+								</div>
+
+								<div class="portfolio-filters__item">
+									<button type="submit" class="portfolio-filters__button">
+										<img src="img/icons/portfolio-filters-icon7.svg" alt="">
+										<span>Фото</span>
+									</button>
+								</div>
+							</div>
+
+							<div class="portfolio-filters__childrens">
+								<div class="portfolio-filters__children">
+									<div class="portfolio-filters__item">
+										<button type="submit" class="portfolio-filters__button">
+											<span>3D</span>
+										</button>
+									</div>
+									<div class="portfolio-filters__item">
+										<button class="portfolio-filters__button _active">
+											<span>2D + инфографика</span>
+										</button>
+									</div>
+									<div class="portfolio-filters__item">
+										<button type="submit" class="portfolio-filters__button">
+											<span>VR + 360</span>
+										</button>
+									</div>
+									<div class="portfolio-filters__item">
+										<button type="submit" class="portfolio-filters__button">
+											<span>GameDev</span>
+										</button>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="portfolio__items">
+							<div class="portfolio__item item-portfolio">
+								<div class="item-portfolio__image">
+									<picture><source srcset="img/portfolio/portfolio1-preview.webp"type="image/webp"><img src="img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy"></picture>
+								</div>
+
+								<div class="item-portfolio__caption">
+									<span>Серия рекламных видеороликов для РЖД</span>
+								</div>
+							</div>
+							<div class="portfolio__item item-portfolio">
+								<div class="item-portfolio__image">
+									<picture><source srcset="img/portfolio/portfolio2-preview.webp"type="image/webp"><img src="img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy"></picture>
+								</div>
+
+								<div class="item-portfolio__caption">
+									<span>Серия рекламных видеороликов для РЖД</span>
+								</div>
+							</div>
+							<div class="portfolio__item item-portfolio">
+								<div class="item-portfolio__image">
+									<picture><source srcset="img/portfolio/portfolio3-preview.webp"type="image/webp"><img src="img/portfolio/portfolio3-preview.jpg" alt="" loading="lazy"></picture>
+								</div>
+
+								<div class="item-portfolio__caption">
+									<span>Серия рекламных видеороликов для РЖД</span>
+								</div>
+							</div>
+							<div class="portfolio__item item-portfolio">
+								<div class="item-portfolio__image">
+									<picture><source srcset="img/portfolio/portfolio4-preview.webp"type="image/webp"><img src="img/portfolio/portfolio4-preview.jpg" alt="" loading="lazy"></picture>
+								</div>
+
+								<div class="item-portfolio__caption">
+									<span>Серия рекламных видеороликов для РЖД</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="portfolio__pagination pagination-wrapper">
+							<nav class="navigation pagination" aria-label="Posts">
+								<div class="nav-links">
+									<span aria-current="page" class="page-numbers current">1</span>
+									<a class="page-numbers" href="">2</a>
+									<a class="page-numbers" href="">3</a>
+								</div>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="reviews" style="background-color: #201E26; color: #fff;">
+				<div class="reviews__container">
+					<div class="reviews__heading">
+						<h2>Отзывы</h2>
+					</div>
+
+					<div class="reviews-main__slider swiper">
+						<div class="reviews-main__wrapper swiper-wrapper">
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+							<div class="reviews-main__slide swiper-slide">
+								<div class="review">
+									<div class="review__body">
+										<div class="review__text">
+											<div class="_content">
+												<p>Такой быстрый и потрясающий результат мы еще не получали нигде в других компаниях</p>
+											</div>
+										</div>
+
+										<div class="review__author _content">
+											<p>Сбербанк <br>
+												Евграфов Растегай, руководитель отдела продаж Сбер Универститет</p>
+										</div>
+									</div>
+
+									<div class="review__image" data-gallery>
+										<picture><source srcset="img/reviews/review-image1.webp"type="image/webp"><img src="img/reviews/review-image1.jpg" alt=""></picture>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="reviews-thumb__slider swiper">
+						<div class="reviews-thumb__wrapper swiper-wrapper">
+							<div class="reviews-thumb__slide swiper-slide">
+								<picture><source srcset="img/reviews/review-thumb1.webp"type="image/webp"><img src="img/reviews/review-thumb1.png" alt="" loading="lazy"></picture>
+							</div>
+							<div class="reviews-thumb__slide swiper-slide">
+								<picture><source srcset="img/reviews/review-thumb2.webp"type="image/webp"><img src="img/reviews/review-thumb2.png" alt="" loading="lazy"></picture>
+							</div>
+							<div class="reviews-thumb__slide swiper-slide">
+								<img src="img/reviews/review-thumb3.svg" alt="" loading="lazy">
+							</div>
+							<div class="reviews-thumb__slide swiper-slide">
+								<img src="img/reviews/review-thumb4.svg" alt="" loading="lazy">
+							</div>
+							<div class="reviews-thumb__slide swiper-slide">
+								<picture><source srcset="img/reviews/review-thumb5.webp"type="image/webp"><img src="img/reviews/review-thumb5.png" alt="" loading="lazy"></picture>
+							</div>
+							<div class="reviews-thumb__slide swiper-slide">
+								<picture><source srcset="img/reviews/review-thumb6.webp"type="image/webp"><img src="img/reviews/review-thumb6.png" alt="" loading="lazy"></picture>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="clients">
+				<div class="clients__container">
+					<div class="clients__heading _content">
+						<h2>
+							<span style="color: #A78E8E;">НАШИ</span> <br>
+							КЛИЕНТЫ
+						</h2>
+
+						<p>* – кликните на логотип клиента, чтобы увидеть видео</p>
+					</div>
+
+					<div class="clients__items">
+						<div class="clients__item"> <picture><source srcset="img/clients/client-image1.webp"type="image/webp"><img src="img/clients/client-image1.png" alt="" loading="lazy"></picture> </div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image2.webp"type="image/webp"><img src="img/clients/client-image2.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><img src="img/clients/client-image3.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><img src="img/clients/client-image4.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image5.webp"type="image/webp"><img src="img/clients/client-image5.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image6.webp"type="image/webp"><img src="img/clients/client-image6.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"> <picture><source srcset="img/clients/client-image1.webp"type="image/webp"><img src="img/clients/client-image1.png" alt="" loading="lazy"></picture> </div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image2.webp"type="image/webp"><img src="img/clients/client-image2.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><img src="img/clients/client-image3.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><img src="img/clients/client-image4.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image5.webp"type="image/webp"><img src="img/clients/client-image5.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image6.webp"type="image/webp"><img src="img/clients/client-image6.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"> <picture><source srcset="img/clients/client-image1.webp"type="image/webp"><img src="img/clients/client-image1.png" alt="" loading="lazy"></picture> </div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image2.webp"type="image/webp"><img src="img/clients/client-image2.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><img src="img/clients/client-image3.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><img src="img/clients/client-image4.svg" alt="" loading="lazy"></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image5.webp"type="image/webp"><img src="img/clients/client-image5.png" alt="" loading="lazy"></picture></div>
+						<div class="clients__item"><picture><source srcset="img/clients/client-image6.webp"type="image/webp"><img src="img/clients/client-image6.png" alt="" loading="lazy"></picture></div>
+					</div>
+				</div>
+			</section>
+		</main>
+		<footer class="footer ">
+			<div class="footer__big-container">
+				<div class="footer__logo logo">
+					<a href="home.html" class="logo__link _icon-logo"></a>
+				</div>
+
+				<div class="footer__top">
+					<nav class="footer__menu footer-menu">
+						<ul>
+							<li><a href="">О нас</a></li>
+							<li><a href="">Портфолио</a></li>
+							<li><a href="">Services</a></li>
+							<li><a href="">Контакты</a></li>
+						</ul>
+					</nav>
+
+					<div class="footer__text _content">
+						<p>Работаем по ООО "ЕДИНАЯ ОЦЕНКА. <br>
+							Стоимость услуг и условий их приобретения действительны на текущую дату.</p>
+					</div>
+
+					<div class="footer__contacts">
+						<div class="footer-contacts">
+							<div class="footer-contacts__item footer-contacts__item-phone">
+								<a href="">8 800 550 59 09</a>
+							</div>
+							<div class="footer-contacts__item footer-contacts__item-email">
+								<a href="">e.o.mediaagency@gmail.com</a>
+							</div>
+						</div>
+
+						<div class="footer__text _content">
+							<p>Хотите задать вопрос, уточнить стоимость ролика или заказать видеосъемку? <br>
+								Оставьте заявку и мы свяжемся с Вами</p>
+						</div>
+
+						<div class="footer__button header__button">
+							<a href="" class="">Перезвонить</a>
+						</div>
+					</div>
+				</div>
+				<div class="footer__bottom">
+					<div class="footer__left">
+						<div class="footer__privacy footer-privacy">
+							<div class="footer-privacy__item">© 2023 MedialGlob</div>
+							<div class="footer-privacy__item">All rights reserved</div>
+							<div class="footer-privacy__item"><a href="">Terms of service</a></div>
+							<div class="footer-privacy__item"><a href="">Privacy policy</a></div>
+						</div>
+					</div>
+					<div class="footer__center">
+						<div class="footer__social social">
+							<div class="social__item">
+								<a href="" class="_icon-facebook"></a>
+							</div>
+							<div class="social__item">
+								<a href="" class="_icon-vk"></a>
+							</div>
+							<div class="social__item">
+								<a href="" class="_icon-instagram"></a>
+							</div>
+						</div>
+					</div>
+					<div class="footer__right">
+						<a href="" class="footer__kan">
+							<img src="img/icons/kan.svg" alt="" loading="lazy">
+						</a>
+					</div>
+				</div>
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+
+	<div id="request" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="" loading="lazy">
+				</button>
+				<div class="popup__text">
+					<form action="" class="form">
+						<div class="popup__title">Оставить заявку</div>
+
+						<div class="form__row">
+							<div class="form__item col-12 col-md-6">
+								<label for="request-name" class="form__label">Имя</label>
+								<input id="request-name" type="text" name="form__name" placeholder="Иван" class="form__input" />
+							</div>
+
+							<div class="form__item col-12 col-md-6">
+								<label for="request-phone" class="form__label">Телефон</label>
+								<input id="request-phone" type="text" name="form__name" placeholder="+7-900-123-45-67" class="form__input form__input_phone" />
+							</div>
+
+							<div class="form__item col-12">
+								<label for="request-email" class="form__label">Почта</label>
+								<input id="request-email" type="text" name="form__name" placeholder="user-mail@mail.ru" class="form__input form__input_email" />
+							</div>
+
+							<div class="form__item col-12">
+								<label for="request-text" class="form__label">Описание</label>
+								<textarea id="request-text" name="form[]" placeholder="Текст обращения" class="form__input"></textarea>
+							</div>
+
+							<div class="form__item col-12">
+								<div class="file__item file-item file-item_upload">
+									<div class="file-item__wrapper">
+										<i class="_icon-upload"></i>
+										<span>Прикрепить файл</span>
+										<input type="file" class="file-item__upload">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form__submit">
+							<button type="submit" class="btn btn_bg-white">ОТПРАВИТЬ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20231120184433"></script>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ru">
+@@include('html/_head.htm',{
+"title":"Портфолио"
+})
+
+<body>
+  <div class="wrapper">
+    @@include('html/_header.htm',{
+    "class":""
+    })
+    <main class="page">
+      <section class="portfolio">
+        <div class="portfolio__container">
+          <div class="portfolio__heading _heading">
+            <h1>Портфолио</h1>
+          </div>
+
+          <div class="portfolio__wrapper">
+            <div class="portfolio__filters portfolio-filters">
+              <div class="portfolio-filters__main">
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon1.svg" alt="">
+                    <span>Все</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button class="portfolio-filters__button _active">
+                    <img src="@img/icons/portfolio-filters-icon2.svg" alt="">
+                    <span>Анимационные</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon3.svg" alt="">
+                    <span>Презентационные</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon4.svg" alt="">
+                    <span>Рекламные</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon5.svg" alt="">
+                    <span>Продуктовые</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon6.svg" alt="">
+                    <span>Обучающие</span>
+                  </button>
+                </div>
+
+                <div class="portfolio-filters__item">
+                  <button type="submit" class="portfolio-filters__button">
+                    <img src="@img/icons/portfolio-filters-icon7.svg" alt="">
+                    <span>Фото</span>
+                  </button>
+                </div>
+              </div>
+
+              <div class="portfolio-filters__childrens">
+                <div class="portfolio-filters__children">
+                  <div class="portfolio-filters__item">
+                    <button type="submit" class="portfolio-filters__button">
+                      <span>3D</span>
+                    </button>
+                  </div>
+                  <div class="portfolio-filters__item">
+                    <button class="portfolio-filters__button _active">
+                      <span>2D + инфографика</span>
+                    </button>
+                  </div>
+                  <div class="portfolio-filters__item">
+                    <button type="submit" class="portfolio-filters__button">
+                      <span>VR + 360</span>
+                    </button>
+                  </div>
+                  <div class="portfolio-filters__item">
+                    <button type="submit" class="portfolio-filters__button">
+                      <span>GameDev</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio__items">
+              <div class="portfolio__item item-portfolio">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio3-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio4-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="portfolio__pagination pagination-wrapper">
+              <nav class="navigation pagination" aria-label="Posts">
+                <div class="nav-links">
+                  <span aria-current="page" class="page-numbers current">1</span>
+                  <a class="page-numbers" href="">2</a>
+                  <a class="page-numbers" href="">3</a>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      @@include('html/reviews.htm',{
+      "class":""
+      })
+
+      @@include('html/clients.htm',{
+      "class":""
+      })
+    </main>
+    @@include('html/_footer.htm',{
+    "class":""
+    })
+  </div>
+  @@include('html/_popup.htm',{})
+  @@include('html/_js.htm',{})
+</body>
+
+</html>

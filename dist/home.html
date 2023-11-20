@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231109174149">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231120184433">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -26,21 +26,21 @@
 						<nav class="menu__body">
 							<ul class="menu__list">
 								<li><a href="about.html">О нас</a></li>
-								<li><a href="">Портфолио</a></li>
+								<li><a href="archive-portfolio.html">Портфолио</a></li>
 								<li class="menu-item menu-item-has-children">
 									<a href="">Услуги</a>
 									<button type="button" class="menu__arrow _icon-menu-chevron" tabindex="-1"></button>
 
 									<ul class="sub-menu">
-										<li><a href="">Анимационные</a></li>
-										<li><a href="">Презентационные</a></li>
-										<li><a href="">Рекламные</a></li>
-										<li><a href="">Продуктовые</a></li>
-										<li><a href="">Обучающие</a></li>
-										<li><a href="">Фото</a></li>
+										<li><a href="single-service.html">Анимационные</a></li>
+										<li><a href="single-service.html">Презентационные</a></li>
+										<li><a href="single-service.html">Рекламные</a></li>
+										<li><a href="single-service.html">Продуктовые</a></li>
+										<li><a href="single-service.html">Обучающие</a></li>
+										<li><a href="single-service.html">Фото</a></li>
 									</ul>
 								</li>
-								<li><a href="">Контакты</a></li>
+								<li><a href="contacts.html">Контакты</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -56,13 +56,13 @@
 					</div>
 
 					<div class="header__button" data-da=".menu__body, 767.98, 2">
-						<a href="" class="">Перезвонить</a>
+						<a href="" class="" data-popup="#request">Перезвонить</a>
 					</div>
 				</div>
 			</div>
 		</header>
 		<main class="page">
-			<section class="home-template">
+			<section class="home-template _firstscreen">
 				<div class="home-template__slider swiper">
 					<div class="home-template__wrapper swiper-wrapper">
 						<div class="home-template__slide swiper-slide" data-fullscreen>
@@ -228,7 +228,58 @@
 		</div>
 	</div>
 </div> -->
-	<script src="js/app.min.js?_v=20231109174149"></script>
+
+	<div id="request" aria-hidden="true" class="popup">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="" loading="lazy">
+				</button>
+				<div class="popup__text">
+					<form action="" class="form">
+						<div class="popup__title">Оставить заявку</div>
+
+						<div class="form__row">
+							<div class="form__item col-12 col-md-6">
+								<label for="request-name" class="form__label">Имя</label>
+								<input id="request-name" type="text" name="form__name" placeholder="Иван" class="form__input" />
+							</div>
+
+							<div class="form__item col-12 col-md-6">
+								<label for="request-phone" class="form__label">Телефон</label>
+								<input id="request-phone" type="text" name="form__name" placeholder="+7-900-123-45-67" class="form__input form__input_phone" />
+							</div>
+
+							<div class="form__item col-12">
+								<label for="request-email" class="form__label">Почта</label>
+								<input id="request-email" type="text" name="form__name" placeholder="user-mail@mail.ru" class="form__input form__input_email" />
+							</div>
+
+							<div class="form__item col-12">
+								<label for="request-text" class="form__label">Описание</label>
+								<textarea id="request-text" name="form[]" placeholder="Текст обращения" class="form__input"></textarea>
+							</div>
+
+							<div class="form__item col-12">
+								<div class="file__item file-item file-item_upload">
+									<div class="file-item__wrapper">
+										<i class="_icon-upload"></i>
+										<span>Прикрепить файл</span>
+										<input type="file" class="file-item__upload">
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form__submit">
+							<button type="submit" class="btn btn_bg-white">ОТПРАВИТЬ</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="js/app.min.js?_v=20231120184433"></script>
 </body>
 
 </html>

@@ -1,19 +1,165 @@
 //<FORM>
 // Снипет (HTML):
 .form {
+	// .form__row
 	&__row {
 	}
-	&__column {
+
+	// .form__label
+	&__label {
+		font-weight: 400;
+		font-size: rem(20);
+		line-height: math.div(24, 20);
+		cursor: pointer;
 	}
-	&__line {
+
+	// .form__item
+	&__item {
+		display: grid;
+		align-content: flex-start;
+		row-gap: rem(8);
+		margin-bottom: rem(16);
 	}
+
+	// .form__input
 	&__input {
+		background-color: transparent;
+		border: rem(1) solid $Greyscope;
+		font-weight: 300;
+		font-size: rem(20);
+		line-height: math.div(26, 20);
+		color: $Latte;
+		padding: rem(12) rem(16);
+		border-radius: rem(8);
+		outline: 0;
+		transition: $transition ease border-color 0s;
+
+		&::placeholder {
+			transition: $transition ease opacity 0s;
+		}
+
+		&:focus {
+			border-color: $White;
+
+			&::placeholder {
+				opacity: 0;
+			}
+		}
+
+		// .form__input_phone
+		&_phone {
+		}
+
+		// .form__input_email
+		&_email {
+		}
 	}
-	&__button {
-	}
-	&__error {
+
+	// .form__submit
+	&__submit {
+		display: flex;
+		justify-content: center;
+		margin-top: rem(40);
+
+		.btn {
+			display: block;
+			min-width: rem(293);
+			text-align: center;
+			
+			@media (any-hover: hover) {
+				transition: $transition ease opacity 0s;
+				&:hover {
+					opacity: 0.6;
+				}
+			}
+		}
 	}
 }
+
+.file {
+	display: grid;
+	align-content: flex-start;
+	row-gap: rem(16);
+
+	// .file__label
+	&__label {
+		gap: rem(8);
+
+		i {
+			flex: 0 0 rem(18);
+			font-size: rem(18);
+		}
+	}
+
+	// .file__list
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		@include adaptiveValue("margin", -8, -4);
+	}
+
+	// .file__item
+	&__item {
+		flex: 0 0 100%;
+		@include adaptiveValue("padding", 8, 4);
+
+		@media (min-width: $mobileM) {
+			flex: 0 0 rem(136);
+			@include adaptiveValue("flex-basis", 136, 116, 768, 575, 1);
+		}
+	}
+
+	// .file__note
+	&__note {
+		font-size: rem(12);
+		line-height: 130%;
+
+		& > * {
+			margin-top: rem(4);
+			margin-bottom: rem(4);
+		}
+		:first-child {
+			margin-top: 0;
+		}
+		:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.file-item {
+	// .file-item__wrapper
+	&__wrapper {
+		position: relative;
+		font-size: rem(20);
+		line-height: math.div(24, 20);
+		display: inline-flex;
+		align-items: center;
+		gap: rem(10);
+	}
+
+	._icon-upload {
+		font-size: rem(24);
+	}
+
+	// .file-item__upload
+	&__upload {
+		position: absolute;
+		display: block;
+		height: 100% !important;
+		opacity: 0;
+		left: 0;
+		right: 0;
+		top: 0;
+		bottom: 0;
+		font-size: rem(0);
+		outline: 0;
+		border: 0;
+		cursor: pointer;
+		background-color: transparent;
+	}
+}
+
 //</FORM>
 
 // <BUTTONS>
