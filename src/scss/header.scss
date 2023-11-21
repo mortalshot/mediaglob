@@ -173,6 +173,8 @@
 						visibility: hidden;
 						pointer-events: none;
 						transition: $transition ease all 0s;
+						border-radius: rem(4);
+						overflow: hidden;
 
 						a {
 							display: block;
@@ -293,8 +295,6 @@
 
 		.header__menu .menu-item.menu-item-has-children > ul {
 			background-color: $BlackNavy;
-			border-radius: rem(4);
-			overflow: hidden;
 		}
 	}
 }

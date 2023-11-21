@@ -1627,8 +1627,6 @@ video {
 
 .header.header_light .header__menu .menu-item.menu-item-has-children > ul {
   background-color: #201e26;
-  border-radius: 0.25rem;
-  overflow: hidden;
 }
 
 .header-contacts__item {
@@ -5228,6 +5226,8 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
     -webkit-transition: 0.3s ease all 0s;
     -o-transition: 0.3s ease all 0s;
     transition: 0.3s ease all 0s;
+    border-radius: 0.25rem;
+    overflow: hidden;
   }
 
   .header__menu .menu-item.menu-item-has-children > ul a {
