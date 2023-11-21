@@ -1379,6 +1379,70 @@ video {
   pointer-events: none;
 }
 
+.control-panel {
+  position: sticky;
+  bottom: clamp( 1.25rem , 0.9993315508rem  +  1.0695187166vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (bottom: $propertyValue) {
+  		bottom: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (bottom: $propertyValue) {
+  		bottom: calc(1.25rem + 0.625 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  z-index: 5;
+}
+
+.control-panel__list {
+  display: -ms-grid;
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: flex-start;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  padding-left: clamp( 1.25rem , 0.9993315508rem  +  1.0695187166vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-left: $propertyValue) {
+  		padding-left: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-left: $propertyValue) {
+  		padding-left: calc(1.25rem + 0.625 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  padding-right: clamp( 1.25rem , 0.9993315508rem  +  1.0695187166vw , 1.875rem );
+  /* 	// Если поддерживается clamp();
+  	@supports (padding-right: $propertyValue) {
+  		padding-right: $propertyValue;
+  	}
+  	// Если не поддерживается clamp();
+  	@supports not (padding-right: $propertyValue) {
+  		padding-right: calc(1.25rem + 0.625 * (100vw - 23.4375rem) / 58.4375);
+  	} */
+  row-gap: 0.75rem;
+}
+
+.control-panel__item a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background-color: #fff;
+  -webkit-box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.15);
+          box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.15);
+  font-size: 1.25rem;
+  line-height: 1;
+  color: #201e26;
+}
+
 .header {
   padding-top: clamp( 1.25rem , 1.1497326203rem  +  0.4278074866vw , 1.5rem );
   /* 	// Если поддерживается clamp();
@@ -1536,6 +1600,7 @@ video {
 }
 
 .header__menu a {
+  outline: 0;
   display: inline-block;
   -webkit-text-decoration: underline transparent from-font;
           text-decoration: underline transparent from-font;
@@ -1955,6 +2020,18 @@ video {
       -ms-flex-pack: justify;
           justify-content: space-between;
   min-width: 14.25rem;
+}
+
+.ticker {
+  display: inline;
+}
+
+.ticker__output {
+  display: inline;
+}
+
+.ticker .typed-cursor {
+  color: #e54c4c;
 }
 
 .home-template2__title div {
@@ -2764,6 +2841,7 @@ video {
   -o-object-fit: cover;
      object-fit: cover;
   height: 100%;
+  width: 100%;
 }
 
 .template6__button {
@@ -6031,6 +6109,16 @@ body:not(.lg-from-hash) .lg-outer.lg-start-zoom .lg-item:not(.lg-zoomable).lg-co
   ._content a:hover {
     -webkit-text-decoration: underline transparent from-font;
             text-decoration: underline transparent from-font;
+  }
+
+  .control-panel__item a {
+    -webkit-transition: 0.3s ease opacity 0s;
+    -o-transition: 0.3s ease opacity 0s;
+    transition: 0.3s ease opacity 0s;
+  }
+
+  .control-panel__item a:hover {
+    opacity: 0.7;
   }
 
   .header__menu .menu-item.menu-item-has-children:hover > ul {

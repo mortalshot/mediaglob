@@ -383,4 +383,44 @@ video {
    pointer-events: none;
 }
 
+.control-panel {
+   position: sticky;
+   @include adaptiveValue("bottom", 30, 20);
+   z-index: 5;
+
+   // .control-panel__list
+   &__list {
+      display: grid;
+      align-content: flex-start;
+      justify-content: flex-end;
+      @include adaptiveValue("padding-left", 30, 20);
+      @include adaptiveValue("padding-right", 30, 20);
+      row-gap: rem(12);
+   }
+
+   // .control-panel__item
+   &__item {
+      a {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         width: rem(44);
+         height: rem(44);
+         border-radius: 50%;
+         background-color: $White;
+         box-shadow: 2px 2px 16px 0px rgba(0, 0, 0, 0.15);
+         font-size: rem(20);
+         line-height: 1;
+         color: $BlackNavy;
+
+         @media (any-hover: hover) {
+           transition: $transition ease opacity 0s;
+            &:hover {
+               opacity: 0.7;
+            }
+         }
+      }
+   }
+}
+
 // swiper

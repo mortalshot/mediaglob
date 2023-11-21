@@ -193,6 +193,23 @@
   }
 }
 
+.ticker {
+  display: inline;
+
+  // .ticker__output
+  &__output {
+    display: inline;
+  }
+
+  // .ticker__template
+  &__template {
+  }
+
+  .typed-cursor {
+    color: $CoralRed;
+  }
+}
+
 .home-template2 {
   // .home-template2__title
   &__title {
@@ -944,6 +961,7 @@
     video {
       object-fit: cover;
       height: 100%;
+      width: 100%;
     }
   }
 

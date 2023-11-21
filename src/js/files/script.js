@@ -38,7 +38,6 @@ document.addEventListener('click', function (e) {
   }
 })
 
-
 function showHeaderHeight() {
   const header = document.querySelector('.header');
 
@@ -136,6 +135,27 @@ function gsapAnimation() {
     }
   }
 }
+
+// Анимация печати текста
+import Typed from 'typed.js';
+function tickerAnimation() {
+  const tickerItems = document.querySelectorAll('.ticker');
+  if (tickerItems.length > 0) {
+    tickerItems.forEach(element => {
+      const elementOutput = element.querySelector('.ticker__output');
+      const elementTemplate = element.querySelector('.ticker__template');
+
+      let ticker = new Typed(elementOutput, {
+        typeSpeed: 200,
+        backSpeed: 200,
+        startDelay: 500,
+        loop: false,
+        stringsElement: elementTemplate
+      });
+    });
+  }
+}
+tickerAnimation();
 
 window.addEventListener('DOMContentLoaded', function () {
   const firstscreen = document.querySelector('._firstscreen');
