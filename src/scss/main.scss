@@ -741,9 +741,12 @@
     @media (max-width: $mobile) {
       color: $White;
     }
-
-    span {
-      display: block;
+  }
+  
+  // .template5__title-word
+  &__title-word {
+    // .template5__title-word_second
+    &_second {
       @include adaptiveValue("font-size", 70, 40);
       color: $Latte;
 
@@ -1288,7 +1291,7 @@
   &__item {
     font-weight: 300;
     @include adaptiveValue("font-size", 40, 28);
-    line-height: math.div(34 , 28);
+    line-height: math.div(34, 28);
 
     // .contacts__item_phone
     &_phone {

@@ -2,10 +2,19 @@
 .header {
 	@include adaptiveValue("padding-top", 24, 20);
 	@include adaptiveValue("padding-bottom", 24, 20);
-	// position: sticky;
+	position: sticky;
 	top: 0;
 	z-index: 10;
 	background-color: $White;
+	transition: 0.5s ease transform 0s;
+
+	&._header-scroll {
+		transform: translateY(-100%);
+	}
+
+	&._header-show {
+		transform: translateY(0);
+	}
 
 	// .header__container
 	&__container {
@@ -149,7 +158,6 @@
 				& > ul {
 					display: grid;
 					align-content: flex-start;
-					row-gap: rem(10);
 
 					&[hidden] {
 						display: none;
@@ -164,11 +172,22 @@
 						opacity: 0;
 						visibility: hidden;
 						pointer-events: none;
-						padding-left: rem(20);
-						padding-right: rem(20);
-						margin-left: rem(-20);
-						margin-right: rem(-20);
 						transition: $transition ease all 0s;
+
+						a {
+							display: block;
+							padding: rem(12) rem(16);
+							font-weight: 400;
+							font-size: rem(16);
+							text-decoration: none;
+
+							@media (any-hover: hover) {
+								transition: $transition ease all 0s;
+								&:hover {
+									background-color: $Latte;
+								}
+							}
+						}
 					}
 					@media (max-width: $mobile) {
 						padding-top: rem(12);
@@ -259,7 +278,6 @@
 
 	&.header_light {
 		color: $Latte;
-		mix-blend-mode: difference;
 		background-color: transparent;
 
 		a {
@@ -273,7 +291,9 @@
 		}
 
 		.header__menu .menu-item.menu-item-has-children > ul {
-			background-color: transparent;
+			background-color: $BlackNavy;
+			border-radius: rem(4);
+			overflow: hidden;
 		}
 	}
 }

@@ -82,12 +82,68 @@ function galleryAnimation() {
   }
 }
 
+// gsap анимации
+function gsapAnimation() {
+  const template5 = document.querySelector('.template5');
+  if (template5) {
+    const template5Timeline = gsap.timeline({
+      scrollTrigger: {
+        trigger: template5,
+      },
+    })
+
+    const template5TitleFirstWord = template5.querySelector('.template5__title-word_first');
+    if (template5TitleFirstWord) {
+      template5Timeline.from(template5TitleFirstWord, {
+        xPercent: -50,
+        opacity: 0,
+        duration: 1.6,
+      })
+    }
+
+    const template5TitleSecondWord = template5.querySelector('.template5__title-word_second');
+    if (template5TitleSecondWord) {
+      template5Timeline.from(template5TitleSecondWord, {
+        xPercent: 150,
+        opacity: 0,
+        scale: 3,
+        duration: 1.6,
+      }, "-=1.6")
+    }
+
+    const template5Right = template5.querySelector('.template5__right');
+    if (template5Right) {
+      template5Timeline.from(template5Right, {
+        yPercent: -10,
+        duration: 1.6,
+      }, "-=1.6")
+    }
+
+    const template5Icon = template5.querySelector('.template5__icon');
+    const template5IconImg = template5.querySelector('.template5__icon img');
+    if (template5Icon) {
+      template5Timeline.from(template5Icon, {
+        opacity: 0,
+        yPercent: -40,
+        duration: 1.6,
+      }, "-=1.6")
+
+      template5Timeline.from(template5IconImg, {
+        opacity: 0,
+        scale: 1.2,
+        duration: .3,
+      })
+    }
+  }
+}
+
 window.addEventListener('DOMContentLoaded', function () {
   const firstscreen = document.querySelector('._firstscreen');
   const templateGallery = document.querySelector('.template-gallery');
 
   setTimeout(() => {
     showHeaderHeight();
+    gsapAnimation();
 
     if (templateGallery) {
       galleryAnimation();

@@ -4380,6 +4380,24 @@
             goToHash ? gotoblock_gotoBlock(goToHash, true, 500, 20) : null;
         }
     }
+    function headerScroll() {
+        addWindowScrollEvent = true;
+        const header = document.querySelector("header.header");
+        const headerShow = header.hasAttribute("data-scroll-show");
+        header.dataset.scrollShow && header.dataset.scrollShow;
+        const startPoint = header.dataset.scroll ? header.dataset.scroll : 1;
+        let scrollDirection = 0;
+        let timer;
+        document.addEventListener("windowScroll", (function(e) {
+            const scrollTop = window.scrollY;
+            clearTimeout(timer);
+            if (scrollTop >= startPoint) {
+                !header.classList.contains("_header-scroll") ? header.classList.add("_header-scroll") : null;
+                if (headerShow) if (scrollTop > scrollDirection) header.classList.contains("_header-show") ? header.classList.remove("_header-show") : null; else !header.classList.contains("_header-show") ? header.classList.add("_header-show") : null;
+            }
+            scrollDirection = scrollTop <= 0 ? 0 : scrollTop;
+        }));
+    }
     setTimeout((() => {
         if (addWindowScrollEvent) {
             let windowScroll = new Event("windowScroll");
@@ -6184,11 +6202,54 @@ PERFORMANCE OF THIS SOFTWARE.
             }));
         };
     }
+    function gsapAnimation() {
+        const template5 = document.querySelector(".template5");
+        if (template5) {
+            const template5Timeline = gsap.timeline({
+                scrollTrigger: {
+                    trigger: template5
+                }
+            });
+            const template5TitleFirstWord = template5.querySelector(".template5__title-word_first");
+            if (template5TitleFirstWord) template5Timeline.from(template5TitleFirstWord, {
+                xPercent: -50,
+                opacity: 0,
+                duration: 1.6
+            });
+            const template5TitleSecondWord = template5.querySelector(".template5__title-word_second");
+            if (template5TitleSecondWord) template5Timeline.from(template5TitleSecondWord, {
+                xPercent: 150,
+                opacity: 0,
+                scale: 3,
+                duration: 1.6
+            }, "-=1.6");
+            const template5Right = template5.querySelector(".template5__right");
+            if (template5Right) template5Timeline.from(template5Right, {
+                yPercent: -10,
+                duration: 1.6
+            }, "-=1.6");
+            const template5Icon = template5.querySelector(".template5__icon");
+            const template5IconImg = template5.querySelector(".template5__icon img");
+            if (template5Icon) {
+                template5Timeline.from(template5Icon, {
+                    opacity: 0,
+                    yPercent: -40,
+                    duration: 1.6
+                }, "-=1.6");
+                template5Timeline.from(template5IconImg, {
+                    opacity: 0,
+                    scale: 1.2,
+                    duration: .3
+                });
+            }
+        }
+    }
     window.addEventListener("DOMContentLoaded", (function() {
         document.querySelector("._firstscreen");
         const templateGallery = document.querySelector(".template-gallery");
         setTimeout((() => {
             showHeaderHeight();
+            gsapAnimation();
             if (templateGallery) {
                 galleryAnimation();
                 window.scrollTo(0, 1);
@@ -6206,4 +6267,5 @@ PERFORMANCE OF THIS SOFTWARE.
     menuInit();
     fullVHfix();
     pageNavigation();
+    headerScroll();
 })();
