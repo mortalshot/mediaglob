@@ -96,7 +96,7 @@
             </div>
 
             <div class="portfolio__items">
-              <div class="portfolio__item item-portfolio">
+              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -105,7 +105,7 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio">
+              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -114,7 +114,7 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio">
+              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio3-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -123,7 +123,7 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio">
+              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio4-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -156,16 +156,9 @@
       "class":""
       })
 
-      <div class="control-panel">
-        <div class="control-panel__list">
-          <div class="control-panel__item">
-            <a href="" class="_icon-download"></a>
-          </div>
-          <div class="control-panel__item">
-            <a href="" class="_icon-tv2"></a>
-          </div>
-        </div>
-      </div>
+      @@include('html/_control-panel.htm',{
+      "class":""
+      })
     </main>
     @@include('html/_footer.htm',{
     "class":""

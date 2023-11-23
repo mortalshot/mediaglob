@@ -294,7 +294,9 @@
 		}
 
 		.header__menu .menu-item.menu-item-has-children > ul {
-			background-color: $BlackNavy;
+			@media (min-width: $mobile) {
+				background-color: $BlackNavy;
+			}
 		}
 	}
 }

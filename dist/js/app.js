@@ -6418,6 +6418,7 @@ PERFORMANCE OF THIS SOFTWARE.
                 let frame = frames[i], transform = `translateZ(${zVals[i]}px)`, opacity = zVals[i] < Math.abs(zSpacing) / 1.8 ? 1 : 0;
                 frame.setAttribute("style", `transform: ${transform}; opacity: ${opacity}`);
             }));
+            if (lastPoss >= 1e3) templateGallery.classList.add("_black"); else templateGallery.classList.remove("_black");
         };
     }
     function gsapAnimation() {

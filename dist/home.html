@@ -6,7 +6,7 @@
 	<meta charset="UTF-8">
 	<meta name="format-detection" content="telephone=no">
 	<!-- <style>body{opacity: 0;}</style> -->
-	<link rel="stylesheet" href="css/style.min.css?_v=20231121170306">
+	<link rel="stylesheet" href="css/style.min.css?_v=20231123180258">
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <meta name="robots" content="noindex, nofollow"> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,6 +152,23 @@
 						</div>
 					</div>
 					<div class="swiper-pagination"></div>
+
+					<div class="control-panel ">
+						<div class="control-panel__list">
+							<div class="control-panel__item">
+								<a href="files/example.pdf" download>
+									<span>Скачать бриф</span>
+									<i class="_icon-download"></i>
+								</a>
+							</div>
+							<div class="control-panel__item">
+								<a href="files/example.pdf" download>
+									<span>Скачать презентацию</span>
+									<i class="_icon-tv2"></i>
+								</a>
+							</div>
+						</div>
+					</div>
 				</div>
 			</section>
 		</main>
@@ -288,9 +305,23 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231121170306"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231121170306"></script>
-	<script src="js/app.min.js?_v=20231121170306"></script>
+
+	<div id="video" aria-hidden="true" class="popup popup_video">
+		<div class="popup__wrapper">
+			<div class="popup__content">
+				<button data-close type="button" class="popup__close">
+					<img src="img/icons/close.svg" alt="" loading="lazy">
+				</button>
+
+				<div class="popup__text">
+					<div class="popup__video" data-popup-youtube-place=""></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?_v=20231123180258"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?_v=20231123180258"></script>
+	<script src="js/app.min.js?_v=20231123180258"></script>
 </body>
 
 </html>

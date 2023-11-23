@@ -72,10 +72,45 @@ body::after {
 		position: absolute;
 		right: rem(20);
 		top: rem(20);
+		outline: 0;
 	}
 
 	// .popup__text
 	&__text {
+	}
+
+	// .popup__video
+	&__video {
+		position: relative;
+		padding-bottom: 80%;
+
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&_video {
+		.popup__content {
+			padding-top: rem(52);
+			padding-bottom: rem(52);
+			background-color: transparent;
+			max-width: rem(1280);
+
+			@media (max-width:$mobileSmall){
+				 padding-left: 0;
+				 padding-right: 0; 
+			}
+		}
+
+		.popup__close {
+			@media (max-width:$mobileSmall){
+				 right: 0; 
+			}
+		}
 	}
 
 	&_show {

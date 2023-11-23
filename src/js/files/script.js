@@ -78,6 +78,12 @@ function galleryAnimation() {
 
       frame.setAttribute('style', `transform: ${transform}; opacity: ${opacity}`);
     })
+
+    if (lastPoss >= 1000) {
+      templateGallery.classList.add('_black');
+    } else {
+      templateGallery.classList.remove('_black');
+    }
   }
 }
 
