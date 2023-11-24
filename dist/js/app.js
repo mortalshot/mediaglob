@@ -6421,6 +6421,80 @@ PERFORMANCE OF THIS SOFTWARE.
             if (lastPoss >= 1e3) templateGallery.classList.add("_black"); else templateGallery.classList.remove("_black");
         };
     }
+    function portfolioFilter() {
+        const portfolioFiltersButtons = document.querySelectorAll(".portfolio-filters__button");
+        if (portfolioFiltersButtons.length > 0) {
+            const filterChildrens = document.querySelectorAll(".portfolio-filters__children");
+            const portfolioItems = document.querySelectorAll(".item-portfolio");
+            var childrenFilterItems = Array();
+            portfolioFiltersButtons.forEach((element => {
+                element.addEventListener("click", (function() {
+                    const filterSrc = element.getAttribute("data-filter-src");
+                    document.querySelector(".portfolio-filters__main").classList.add("_block");
+                    if (!element.classList.contains("_active")) {
+                        removeClasses(document.querySelectorAll(".portfolio-filters__button"), "_active");
+                        element.classList.add("_active");
+                        filterChildrens.forEach((children => {
+                            const filterChildren = document.querySelector("#" + filterSrc);
+                            if (filterChildren && !filterChildren.classList.contains("._slide")) _slideDown(filterChildren, 500);
+                            if (filterSrc && filterChildren) {
+                                filterChildren.classList.add("_slide");
+                                _slideUp(children, 500);
+                                setTimeout((() => {
+                                    filterChildren.classList.remove("_slide");
+                                }), 500);
+                            } else _slideUp(children, 500);
+                        }));
+                        const childrenFilterInputs = document.querySelectorAll(".portfolio-filters__children-button input");
+                        childrenFilterInputs.forEach((input => {
+                            input.checked = false;
+                        }));
+                        childrenFilterItems = [];
+                        if (element.classList.contains("portfolio-filters__button_all")) portfolioItems.forEach((card => {
+                            card.style.display = "block";
+                        })); else {
+                            let parentFilter = document.querySelectorAll(`[data-filter-parent="${filterSrc}"]`);
+                            portfolioItems.forEach((card => {
+                                card.style.display = "none";
+                            }));
+                            parentFilter.forEach((findElement => {
+                                findElement.style.display = "block";
+                            }));
+                        }
+                    }
+                    setTimeout((() => {
+                        document.querySelector(".portfolio-filters__main").classList.remove("_block");
+                    }), 500);
+                    element.classList.add("_active");
+                }));
+            }));
+            const childrenFilterInputs = document.querySelectorAll(".portfolio-filters__children-button input");
+            childrenFilterInputs.forEach((input => {
+                input.addEventListener("change", (function() {
+                    if (false == input.checked) {
+                        const findItems = document.querySelectorAll(`[data-filter-children="${input.value}"]`);
+                        findItems.forEach((findElement => {
+                            findElement.style.display = "none";
+                        }));
+                        childrenFilterItems = [];
+                    } else {
+                        childrenFilterInputs.forEach((element => {
+                            if (true == element.checked) childrenFilterItems.push(document.querySelectorAll(`[data-filter-children="${element.value}"]`));
+                        }));
+                        portfolioItems.forEach((card => {
+                            card.style.display = "none";
+                        }));
+                        childrenFilterItems.forEach((row => {
+                            row.forEach((element => {
+                                element.style.display = "block";
+                            }));
+                        }));
+                    }
+                }));
+            }));
+        }
+    }
+    portfolioFilter();
     function gsapAnimation() {
         const template5 = document.querySelector(".template5");
         if (template5) {

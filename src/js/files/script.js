@@ -1,5 +1,5 @@
 // Подключение функционала 
-import { isMobile, removeClasses, _slideUp, _slideToggle } from "./functions.js";
+import { isMobile, removeClasses, _slideUp, _slideDown, _slideToggle } from "./functions.js";
 // Подключение списка активных модулей
 import { flsModules } from "./modules.js";
 
@@ -87,6 +87,116 @@ function galleryAnimation() {
   }
 }
 
+function portfolioFilter() {
+  // Показываем подфильтры, если есть или скрываем, когда их нет
+  const portfolioFiltersButtons = document.querySelectorAll('.portfolio-filters__button');
+  if (portfolioFiltersButtons.length > 0) {
+    const filterChildrens = document.querySelectorAll('.portfolio-filters__children');
+    const portfolioItems = document.querySelectorAll('.item-portfolio');
+    var childrenFilterItems = Array();
+
+    portfolioFiltersButtons.forEach(element => {
+      element.addEventListener('click', function () {
+        const filterSrc = element.getAttribute('data-filter-src');
+
+        // Блокируем переключение фильтров до завершения анимации
+        document.querySelector('.portfolio-filters__main').classList.add('_block');
+
+        if (!element.classList.contains('_active')) {
+          removeClasses(document.querySelectorAll('.portfolio-filters__button'), "_active");
+          element.classList.add('_active');
+
+          filterChildrens.forEach(children => {
+            const filterChildren = document.querySelector('#' + filterSrc);
+
+            if (filterChildren && !filterChildren.classList.contains('._slide')) {
+              _slideDown(filterChildren, 500);
+            }
+            if (filterSrc && filterChildren) {
+              filterChildren.classList.add('_slide');
+              _slideUp(children, 500);
+
+              setTimeout(() => {
+                filterChildren.classList.remove('_slide');
+              }, 500);
+            } else {
+              _slideUp(children, 500);
+            }
+          });
+
+          // Отключаем выбранные чекбоксы при переключение родителей
+          const childrenFilterInputs = document.querySelectorAll('.portfolio-filters__children-button input');
+          childrenFilterInputs.forEach(input => {
+            input.checked = false;
+          });
+          childrenFilterItems = [];
+
+          // Фильтруем карточки
+          if (element.classList.contains('portfolio-filters__button_all')) {
+            portfolioItems.forEach(card => {
+              card.style.display = "block";
+            });
+          } else {
+            // Показываем карточки Родительского фильтра
+            let parentFilter = document.querySelectorAll(`[data-filter-parent="${filterSrc}"]`);
+
+            portfolioItems.forEach(card => {
+              card.style.display = "none";
+            });
+
+            parentFilter.forEach(findElement => {
+              findElement.style.display = "block";
+            });
+          }
+        }
+
+        // Разблокируем переключение фильтров
+        setTimeout(() => {
+          document.querySelector('.portfolio-filters__main').classList.remove('_block');
+        }, 500);
+
+        // Показываем активный выбранный фильтр-родитель
+        element.classList.add('_active');
+      })
+    });
+
+    // Фильтруем карточки по дочерним фильтрам
+    const childrenFilterInputs = document.querySelectorAll('.portfolio-filters__children-button input');
+
+    childrenFilterInputs.forEach(input => {
+      input.addEventListener('change', function () {
+        if (input.checked == false) {
+          const findItems = document.querySelectorAll(`[data-filter-children="${input.value}"]`);
+          findItems.forEach(findElement => {
+            findElement.style.display = "none";
+          });
+
+          // Обнуляем массив
+          childrenFilterItems = [];
+
+        } else {
+          // В массив добавляем все выбранные карточки
+          childrenFilterInputs.forEach(element => {
+            if (element.checked == true) {
+              childrenFilterItems.push(document.querySelectorAll(`[data-filter-children="${element.value}"]`));
+            }
+          });
+
+          portfolioItems.forEach(card => {
+            card.style.display = "none";
+          });
+
+          childrenFilterItems.forEach(row => {
+            row.forEach(element => {
+              element.style.display = "block";
+            });
+          });
+        }
+      })
+    });
+  }
+}
+portfolioFilter();
 // gsap анимации
 function gsapAnimation() {
   const template5 = document.querySelector('.template5');

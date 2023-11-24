@@ -112,13 +112,13 @@
   }
 
   .control-panel {
-    @media (min-width:$mobile){
-       display: none; 
+    @media (min-width: $mobile) {
+      display: none;
     }
-    @media (max-width:$mobile){
-       position: fixed;
-       bottom: rem(20);
-       right: rem(0); 
+    @media (max-width: $mobile) {
+      position: fixed;
+      bottom: rem(20);
+      right: rem(0);
     }
   }
 }
@@ -192,8 +192,8 @@
     max-width: rem(525);
     color: $Cacao;
 
-    @media (max-width:$mobile){
-       padding-right: rem(60); 
+    @media (max-width: $mobile) {
+      padding-right: rem(60);
     }
   }
 
@@ -301,7 +301,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: opacity var(--gallery-transition), background-color var(--gallery-transition);
+    transition:
+      opacity var(--gallery-transition),
+      background-color var(--gallery-transition);
     will-change: transform;
     transform-style: preserve-3d;
   }
@@ -1306,6 +1308,8 @@
 
   // .template8__title
   &__title {
+    line-height: 1;
+
     &:not(:last-child) {
       @include adaptiveValue("margin-bottom", 60, 40);
     }
@@ -1630,6 +1634,10 @@
       width: 0;
       height: 0;
     }
+
+    &._block {
+      pointer-events: none;
+    }
   }
 
   // .portfolio-filters__item
@@ -1666,10 +1674,15 @@
   // .portfolio-filters__childrens
   &__childrens {
     margin-top: rem(40);
+    min-height: rem(24);
   }
 
   // .portfolio-filters__children
   &__children {
+  }
+
+  // .portfolio-filters__list
+  &__list {
     display: flex;
     align-items: center;
     @include adaptiveValue("gap", 16, 4);
@@ -1683,21 +1696,30 @@
       width: 0;
       height: 0;
     }
+  }
 
-    .portfolio-filters__button {
-      color: $Greyscope;
-      display: flex;
+  // .portfolio-filters__children-button
+  &__children-button {
+    color: $Greyscope;
+    display: flex;
+    @include adaptiveValue("font-size", 20, 16);
+    line-height: math.div(19, 16);
+    white-space: nowrap;
 
-      span {
-        text-decoration: underline transparent from-font;
-        text-underline-offset: 3px;
-        transition: $transition ease text-decoration 0s;
-      }
+    .checkbox__label::before {
+      display: none;
+    }
 
-      &._active {
-        span {
-          text-decoration: underline from-font;
-        }
+    span {
+      display: block;
+      text-decoration: underline transparent from-font;
+      text-underline-offset: 3px;
+      transition: $transition ease text-decoration 0s;
+    }
+
+    input {
+      &:checked + .checkbox__label span {
+        text-decoration: underline from-font;
       }
     }
   }

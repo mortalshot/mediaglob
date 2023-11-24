@@ -20,49 +20,49 @@
             <div class="portfolio__filters portfolio-filters">
               <div class="portfolio-filters__main">
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button portfolio-filters__button_all _active">
                     <img src="@img/icons/portfolio-filters-icon1.svg" alt="">
                     <span>Все</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button class="portfolio-filters__button _active">
+                  <button type="button" class="portfolio-filters__button" data-filter-src="parent-filter1">
                     <img src="@img/icons/portfolio-filters-icon2.svg" alt="">
                     <span>Анимационные</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button" data-filter-src="parent-filter2">
                     <img src="@img/icons/portfolio-filters-icon3.svg" alt="">
                     <span>Презентационные</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button" data-filter-src="parent-filter3">
                     <img src="@img/icons/portfolio-filters-icon4.svg" alt="">
                     <span>Рекламные</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button">
                     <img src="@img/icons/portfolio-filters-icon5.svg" alt="">
                     <span>Продуктовые</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button">
                     <img src="@img/icons/portfolio-filters-icon6.svg" alt="">
                     <span>Обучающие</span>
                   </button>
                 </div>
 
                 <div class="portfolio-filters__item">
-                  <button type="submit" class="portfolio-filters__button">
+                  <button type="button" class="portfolio-filters__button">
                     <img src="@img/icons/portfolio-filters-icon7.svg" alt="">
                     <span>Фото</span>
                   </button>
@@ -70,33 +70,55 @@
               </div>
 
               <div class="portfolio-filters__childrens">
-                <div class="portfolio-filters__children">
-                  <div class="portfolio-filters__item">
-                    <button type="submit" class="portfolio-filters__button">
-                      <span>3D</span>
-                    </button>
+                <div id="parent-filter1" class="portfolio-filters__children" hidden>
+                  <div class="portfolio-filters__list">
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter1-1" class="checkbox__input" type="checkbox" value="children-filter1-1" name="form[]">
+                        <label for="children-filter1-1" class="checkbox__label"><span class="checkbox__text">3D</span></label>
+                      </div>
+                    </div>
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter1-2" class="checkbox__input" type="checkbox" value="children-filter1-2" name="form[]">
+                        <label for="children-filter1-2" class="checkbox__label"><span class="checkbox__text">2D + инфографика</span></label>
+                      </div>
+                    </div>
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter1-3" class="checkbox__input" type="checkbox" value="children-filter1-3" name="form[]">
+                        <label for="children-filter1-3" class="checkbox__label"><span class="checkbox__text">VR + 360</span></label>
+                      </div>
+                    </div>
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter1-4" class="checkbox__input" type="checkbox" value="children-filter1-4" name="form[]">
+                        <label for="children-filter1-4" class="checkbox__label"><span class="checkbox__text">GameDev</span></label>
+                      </div>
+                    </div>
                   </div>
-                  <div class="portfolio-filters__item">
-                    <button class="portfolio-filters__button _active">
-                      <span>2D + инфографика</span>
-                    </button>
-                  </div>
-                  <div class="portfolio-filters__item">
-                    <button type="submit" class="portfolio-filters__button">
-                      <span>VR + 360</span>
-                    </button>
-                  </div>
-                  <div class="portfolio-filters__item">
-                    <button type="submit" class="portfolio-filters__button">
-                      <span>GameDev</span>
-                    </button>
+                </div>
+                <div id="parent-filter2" class="portfolio-filters__children" hidden>
+                  <div class="portfolio-filters__list">
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter2-1" class="checkbox__input" type="checkbox" value="children-filter2-1" name="form[]">
+                        <label for="children-filter2-1" class="checkbox__label"><span class="checkbox__text">3D</span></label>
+                      </div>
+                    </div>
+                    <div class="portfolio-filters__item">
+                      <div class="portfolio-filters__children-button">
+                        <input id="children-filter2-2" class="checkbox__input" type="checkbox" value="children-filter2-2" name="form[]">
+                        <label for="children-filter2-2" class="checkbox__label"><span class="checkbox__text">2D + инфографика</span></label>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="portfolio__items">
-              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-1" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -105,7 +127,7 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-2" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -114,7 +136,61 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-3" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-4" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-1" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-2" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-3" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter1" data-filter-children="children-filter1-4" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter2" data-filter-children="children-filter2-1" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio3-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -123,7 +199,7 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
-              <div class="portfolio__item item-portfolio" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter2" data-filter-children="children-filter2-1" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
                 <div class="item-portfolio__image">
                   <img src="@img/portfolio/portfolio4-preview.jpg" alt="" loading="lazy">
                 </div>
@@ -132,9 +208,36 @@
                   <span>Серия рекламных видеороликов для РЖД</span>
                 </div>
               </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter2" data-filter-children="children-filter2-1" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio1-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter2" data-filter-children="children-filter2-2" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
+              <div class="portfolio__item item-portfolio" data-filter-parent="parent-filter3" data-popup="#video" data-popup-youtube="YtN8ya35R0g">
+                <div class="item-portfolio__image">
+                  <img src="@img/portfolio/portfolio2-preview.jpg" alt="" loading="lazy">
+                </div>
+
+                <div class="item-portfolio__caption">
+                  <span>Серия рекламных видеороликов для РЖД</span>
+                </div>
+              </div>
             </div>
 
-            <div class="portfolio__pagination pagination-wrapper">
+            <!-- <div class="portfolio__pagination pagination-wrapper">
               <nav class="navigation pagination" aria-label="Posts">
                 <div class="nav-links">
                   <span aria-current="page" class="page-numbers current">1</span>
@@ -142,7 +245,7 @@
                   <a class="page-numbers" href="">3</a>
                 </div>
               </nav>
-            </div>
+            </div> -->
           </div>
         </div>
       </section>
